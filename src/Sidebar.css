@@ -7,7 +7,7 @@
 .sidebar__search {
     display: flex;
     align-items: center;
-    background-color: #f6f6f6;
+    background-color: #d1d1d1;
     height: 39px;
     padding: 10px;
 }
@@ -22,6 +22,12 @@
 .sidebar__searchContainer > .MuiSvgIcon-root {
     color: grey;
     padding: 10px;
+}
+.sidebar__chats {
+    flex: 1;
+    background-color: white;
+    overflow: scroll;
+
 }
 .sidebar__searchContainer > input {
     border: none;
@@ -40,6 +46,7 @@
     align-items: center;
     justify-content: space-between;
     min-width: 10vw;
+    
 }
 
 .sidebar__headerRight > .MuiSvgIcon-root {
