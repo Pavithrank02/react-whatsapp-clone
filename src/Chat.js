@@ -37,7 +37,7 @@ function Chat() {
 
   const sendMessage = (e) => {
     e.preventDefault();
-    console.log("dd", input);
+    {console.log("dd", input)}
     db.collection('rooms').doc(roomId).collection('messages').add({
       message: input,
       name: user.displayName,
@@ -54,8 +54,7 @@ function Chat() {
           <h3>{roomName}</h3>
           <p> Last seen {" "}
           {new Date(
-              messages[messages.length - 1].
-              timestamp.toDate()
+            messages[messages.length - 1] && messages[messages.length - 1].timestamp.toDate()
           ).toUTCString()} </p>
         </div>
         <div className="chat__headerRight">
@@ -75,7 +74,7 @@ function Chat() {
         <p className={`chat__message ${ message.name === user.displayName && "chat__reciever"}`}>
         <span className="chat__name"> {message.name}</span>
        {message.message}
-       <span className="chat_timestamp">{new Date(message.timestamp.toDate()).toUTCString()}</span>
+       <span className="chat_timestamp">{new Date(message.timestamp && message.timestamp.toDate()).toUTCString()}</span>
       </p>
       ))} 
       </div>
