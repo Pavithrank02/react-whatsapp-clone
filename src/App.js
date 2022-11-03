@@ -3,19 +3,22 @@ import "./App.css";
 import Sidebar from "./Sidebar";
 import Chat from "./Chat";
 import { Route, Routes } from "react-router-dom";
+import Login from "./Login";
 function App() {
   const [user, setUser] = useState(null);
   return (
     <div className="app">
     {!user ? (
-      <h1>Login</h1>
-    ):}
+      <Login />
+    ):(
       <div className="app__body">
       <Sidebar />
           <Routes>
             <Route path="/rooms/:roomId" element={<Chat />} />
           </Routes>
       </div>
+    )}
+      
     </div>
   );
 }
