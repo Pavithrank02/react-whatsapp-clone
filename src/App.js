@@ -1,21 +1,20 @@
-import React from "react"
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
 import Sidebar from "./Sidebar";
 import Chat from "./Chat";
-import { Routes ,Route, BrowserRouter } from 'react-router-dom';
+import { Route, Routes } from "react-router-dom";
 function App() {
+  const [user, setUser] = useState(null);
   return (
     <div className="app">
+    {!user ? (
+      <h1>Login</h1>
+    ):}
       <div className="app__body">
-          <BrowserRouter>
-            <Routes>
-              <Route exact path='/app' element={<Sidebar />}>
-              </Route>
-              <Route exact path='/'>
-                <h1> Home Screen</h1>
-              </Route>
-            </Routes>
-          </BrowserRouter>
+      <Sidebar />
+          <Routes>
+            <Route path="/rooms/:roomId" element={<Chat />} />
+          </Routes>
       </div>
     </div>
   );

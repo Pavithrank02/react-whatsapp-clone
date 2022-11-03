@@ -21,7 +21,7 @@
     font-weight: 500;
 }
 .chat__headerInfo > p {
-    color: gray;
+    color: rgb(150, 149, 149);
 }
 .chat__message {
     position: relative;
@@ -49,6 +49,7 @@
 }
 .chat__headerRight {
     display: flex;
+    
     justify-content: space-between;
     min-width: 100px;
 
